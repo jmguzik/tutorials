@@ -13,6 +13,7 @@
 \setbeamercolor{frametitle}{fg=UBCblue,bg=white}
 
 
+
 \setbeamercolor{palette primary}{bg=UBCblue,fg=white}
 \setbeamercolor{palette secondary}{bg=UBCblue,fg=white}
 \setbeamercolor{palette tertiary}{bg=UBCblue,fg=white}
@@ -50,7 +51,7 @@
 	\frametitle{Expression language data types}
 		\begin{enumerate}
 			\item Scalar - a simple numeric floating point value
-\item String - a simple string value; currently unused
+\item String - a simple string value
 \item Instant vector
 \item Range vector
 		\end{enumerate}
@@ -189,6 +190,9 @@ Aggregation operators:
 \item ...
 \end{itemize}
 Aggregation operators take an instant vector as input and output also an instant vector.
+
+\vspace{0.1cm}
+They can be used together with \texttt{without} or \texttt{by} clause.
 \end{frame}
 \section{Functions/queries}
 \begin{frame}

@@ -1,6 +1,6 @@
 ## Requests per agent
 
-`rate, watch out for labels (eg ghproxy reset)`
+### rate, watch out for labels (eg ghproxy reset)
 
 `rate(github_request_duration_count{status=~"403"}[10m])`
 
@@ -25,3 +25,6 @@
 
 ### 95% percent by plugin
 `histogram_quantile(0.95, sum(rate(prow_plugin_handle_duration_seconds_bucket{took_action="true"}[30m])) by (le, plugin))`
+
+## github wait request duration seconds
+`sum(rate(github_request_wait_duration_seconds_bucket{le="10", token_hash="openshift-ci - openshift"}[30m])) by (request_type) /  sum(rate(github_request_wait_duration_seconds_count{token_hash="openshift-ci - openshift"}[30m])) by ( request_type)`
